@@ -13,6 +13,11 @@ namespace DegerVeReferansTipleri
 
             Console.WriteLine(sayi1+" "+sayi2);
 
+
+            if (!"a".Equals("b")){
+                Console.WriteLine("Ayn");
+            }
+
         }
     }
 }
