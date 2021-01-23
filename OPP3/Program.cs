@@ -11,9 +11,11 @@ namespace OPP3
             FinanceCreditManager FCM = new FinanceCreditManager();
             HouseCreditManager HCM = new HouseCreditManager();
             TransportCreditManager TCM = new TransportCreditManager();
+            LoggerService FS = new FileLoggerService();
+            LoggerService DS = new DataBaseLoggerService();
 
             ApplicationManager appM = new ApplicationManager();
-            //appM.toApply(FCM);
+            appM.toApply(FCM, new List<LoggerService> {FS,DS });
 
             List<CreditManager> credits = new List<CreditManager>() {FCM,TCM};
 

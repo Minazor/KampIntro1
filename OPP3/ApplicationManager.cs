@@ -7,18 +7,22 @@ namespace OOP3
 {
     class ApplicationManager
     {
-        public void toApply(CreditManager cm) {
+        public void toApply(CreditManager cm, List<LoggerService> loggerServices)
+        {
 
             cm.Calculate();
-        }
-
-        public void preNotification(List<CreditManager> creditList)
-        {
-            foreach(var c in creditList)
+            foreach (var log in loggerServices)
             {
-                c.Calculate();
-            } 
+                log.Log();
+            }
         }
-        
+            public void preNotification(List<CreditManager> creditList)
+            {
+                foreach (var c in creditList)
+                {
+                    c.Calculate();
+                }
+            }
+
+        }
     }
-}
